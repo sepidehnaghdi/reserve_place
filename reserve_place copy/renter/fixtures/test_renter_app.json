@@ -1,0 +1,112 @@
+[
+  {
+    "model": "auth.group",
+    "pk": "1",
+    "fields": {
+      "name": "locator"
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": "2",
+    "fields": {
+      "name": "renter"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": "1",
+    "fields": {
+      "password": "pbkdf2_sha256$36000$4zNp95prg0Vm$x1KTdCvNNR7NoaLd3Yak7vf93FrZ0o/z9R8YV3h99PM=",
+      "username": "super_user",
+      "email": "super@user.com",
+      "is_superuser": true
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": "2",
+    "fields": {
+      "password": "pbkdf2_sha256$36000$4zNp95prg0Vm$x1KTdCvNNR7NoaLd3Yak7vf93FrZ0o/z9R8YV3h99PM=",
+      "username": "user1",
+      "email": "user1@user.com",
+      "is_superuser": false,
+      "first_name": "user",
+      "last_name": "userian"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": "3",
+    "fields": {
+      "password": "pbkdf2_sha256$36000$4zNp95prg0Vm$x1KTdCvNNR7NoaLd3Yak7vf93FrZ0o/z9R8YV3h99PM=",
+      "username": "user2",
+      "email": "user2@user.com",
+      "is_superuser": false,
+      "first_name": "user2",
+      "last_name": "userian2"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": "4",
+    "fields": {
+      "password": "pbkdf2_sha256$36000$4zNp95prg0Vm$x1KTdCvNNR7NoaLd3Yak7vf93FrZ0o/z9R8YV3h99PM=",
+      "username": "user3",
+      "email": "user3@user.com",
+      "is_superuser": false,
+      "first_name": "user3",
+      "last_name": "userian3"
+    }
+  },
+  {
+    "model": "auth.user_groups",
+    "pk": "1",
+    "fields": {
+      "user_id": 2,
+      "group_id": 2
+    }
+  },
+  {
+    "model": "auth.user_groups",
+    "pk": "2",
+    "fields": {
+      "user_id": 3,
+      "group_id": 2
+    }
+  },
+    {
+    "model": "auth.user_groups",
+    "pk": "3",
+    "fields": {
+      "user_id": 4,
+      "group_id": 2
+    }
+  },
+  {
+    "model": "renter.renterprofile",
+    "fields": {
+      "user": 2,
+      "contact_number": "1111",
+
+      "birth_certificate_number": "11111",
+      "national_number": "11111",
+
+      "image_of_national_card": "test.py",
+      "image_of_birth_certificate": "test.py"
+    }
+  },
+  {
+    "model": "renter.renterprofile",
+    "fields": {
+      "user": 3,
+      "contact_number": "34323",
+
+      "birth_certificate_number": "234234234",
+      "national_number": "34234234",
+
+      "image_of_national_card": "test.py",
+      "image_of_birth_certificate": "test.py"
+    }
+  }
+]
