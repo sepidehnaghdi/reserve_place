@@ -48,6 +48,18 @@
     }
   },
   {
+    "model": "auth.user",
+    "pk": "4",
+    "fields": {
+      "password": "pbkdf2_sha256$36000$4zNp95prg0Vm$x1KTdCvNNR7NoaLd3Yak7vf93FrZ0o/z9R8YV3h99PM=",
+      "username": "user3",
+      "email": "user3@user.com",
+      "is_superuser": false,
+      "first_name": "user3",
+      "last_name": "userian3"
+    }
+  },
+  {
     "model": "auth.user_groups",
     "pk": "1",
     "fields": {
@@ -64,10 +76,49 @@
     }
   },
     {
+    "model": "auth.user_groups",
+    "pk": "3",
+    "fields": {
+      "user_id": 4,
+      "group_id": 1
+    }
+  },
+    {
     "model": "place_app.place",
     "pk": "1",
     "fields": {
       "user": 2,
+      "province": "isf",
+      "city": "shahin shahr",
+      "address": "third street, no 12",
+      "year_of_construction": 1390,
+      "total_area": 200,
+      "construction_area": 150,
+      "num_of_bed_rooms": 2,
+      "place_type": "h",
+      "home_document_file": "test.py",
+      "max_num_of_people": 10,
+      "allowed_more_people": false,
+      "allowed_pet": false,
+      "start_rental_period": "2017-02-20",
+      "end_rental_period": "2017-02-25",
+      "price_per_night": 2000000,
+      "assignment_time": "14:00",
+      "delivery_time": "17:00",
+      "price_for_each_more_person": 300000,
+      "rental_conditions": "conditions",
+      "description": "desc",
+      "services": {"stove": true},
+      "surroundings": "surroundings",
+      "distance_from_store": 3423,
+      "distance_from_restaurant": 2343
+    }
+  },
+     {
+    "model": "place_app.place",
+    "pk": "2",
+    "fields": {
+      "user": 4,
       "province": "isf",
       "city": "shahin shahr",
       "address": "third street, no 12",

@@ -21,3 +21,26 @@ class PlacePermission(permissions.BasePermission):
             user_groups = request.user.groups.values_list('name', flat=True)
             return ("locator" in user_groups and obj.user == request.user) or request.user.is_superuser
 
+
+class RentPermission(permissions.BasePermission):
+    def has_permission(self, request, view):
+        user_groups = request.user.groups.values_list('name', flat=True)
+
+        if request.method in permissions.SAFE_METHODS:
+            return True
+
+        if request.method in ['POST', 'DELETE']:
+            return "renter" in user_groups
+
+        return False
+
+    def has_object_permission(self, request, view, obj):
+        user_groups = request.user.groups.values_list('name', flat=True)
+
+        if request.method in permissions.SAFE_METHODS:
+            return True
+
+        if request.method == 'DELETE':
+            return "renter" in user_groups and obj.renter == request.user
+
+        return False

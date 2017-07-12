@@ -45,4 +45,16 @@ class Place(models.Model):
     distance_from_restaurant = models.BigIntegerField(null=True, blank=True)
 
 
+class Rent(models.Model):
+    renter = models.ForeignKey(User, null=False, blank=False)
+    place = models.ForeignKey(Place, null=False, blank=False)
+    check_in_date = models.DateField(null=False, blank=False)
+    check_out_date = models.DateField(null=False, blank=False)
+    STATUS_CHOICES = (
+        ('t', 'temporarily_reserved'),
+        ('r', 'reserved')
+    )
+    status = models.CharField(choices=STATUS_CHOICES, null=False, blank=False, max_length=1, default='t')
+    updated = models.DateField(auto_now=True)
+
 

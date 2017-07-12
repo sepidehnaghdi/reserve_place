@@ -1,8 +1,22 @@
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
-from .models import Place
+from .models import Place, Rent
 from django.contrib.auth.models import User, Group
 from django.core.exceptions import PermissionDenied
+
+
+class RentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Rent
+        fields = '__all__'
+        read_only_fields = ('renter', )
+        lookup_url_kwarg = "id"
+
+    def create(self, validated_data):
+        validated_data["renter"] = self.context['request'].user
+
+        rent = Rent.objects.create(**validated_data)
+        return rent
 
 
 class PlaceSerializer(serializers.ModelSerializer):

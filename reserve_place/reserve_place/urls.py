@@ -22,7 +22,7 @@ from user_app.views import UserViewSet, GroupViewSet, RegisterViewSet, Confirmat
 from locator.views import LocatorProfileViewSet
 from database_files import views
 from renter.views import RenterProfileViewSet
-from place_app.views import PlaceViewSet
+from place_app.views import PlaceViewSet, RentViewSet
 
 router = ExtendedSimpleRouter(trailing_slash=False)
 router.register(r'users', UserViewSet, base_name="users")
@@ -32,6 +32,8 @@ router.register(r'confirm', ConfirmationViewSet)
 router.register(r'locators', LocatorProfileViewSet)
 router.register(r'renters', RenterProfileViewSet)
 router.register(r'places', PlaceViewSet)
+router.register(r'rents', RentViewSet, base_name='rents')
+
 
 urlpatterns = [
     url(r'^api/v1/', include(router.urls)),
