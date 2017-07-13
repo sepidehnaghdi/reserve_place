@@ -1,9 +1,12 @@
-from django.shortcuts import render
-from .models import Place, Rent
+from django.db import transaction
+from django.shortcuts import render, get_object_or_404
+from .models import Place, Rent, RenterComment, PlaceImage
 from rest_framework import viewsets
-from .serializers import PlaceSerializer, RentSerializer
+from .serializers import PlaceSerializer, RentSerializer, RenterCommentSerializer, PlaceImageSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from .permissions import PlacePermission, RentPermission
+from .permissions import PlacePermission, RentPermission, RenterCommentPermission, PlaceImagePermission
+from rest_framework_extensions.mixins import NestedViewSetMixin
+from rest_framework.parsers import MultiPartParser
 
 
 class PlaceViewSet(viewsets.ModelViewSet):
@@ -27,3 +30,22 @@ class RentViewSet(viewsets.ModelViewSet):
             queryset = queryset.filter(place__user=self.request.user)
 
         return queryset
+
+
+class RenterCommentViewSet(viewsets.ModelViewSet):
+    queryset = RenterComment.objects.all()
+    serializer_class = RenterCommentSerializer
+    permission_classes = (IsAuthenticated, RenterCommentPermission)
+
+
+class PlaceImageViewSet(NestedViewSetMixin, viewsets.ModelViewSet):
+    queryset = PlaceImage.objects.all()
+    parser_classes = (MultiPartParser,)
+    serializer_class = PlaceImageSerializer
+    permission_classes = (IsAuthenticated, PlaceImagePermission)
+    http_method_names = ('get', 'post', 'delete')
+
+    def perform_create(self, serializer):
+        place = get_object_or_404(Place, id=self.kwargs['parent_lookup_place'])
+        serializer.save(place=place, image_name=self.request.FILES['image'].name)
+

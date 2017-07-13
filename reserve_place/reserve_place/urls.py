@@ -22,7 +22,7 @@ from user_app.views import UserViewSet, GroupViewSet, RegisterViewSet, Confirmat
 from locator.views import LocatorProfileViewSet
 from database_files import views
 from renter.views import RenterProfileViewSet
-from place_app.views import PlaceViewSet, RentViewSet
+from place_app.views import PlaceViewSet, RentViewSet, RenterCommentViewSet, PlaceImageViewSet
 
 router = ExtendedSimpleRouter(trailing_slash=False)
 router.register(r'users', UserViewSet, base_name="users")
@@ -33,7 +33,10 @@ router.register(r'locators', LocatorProfileViewSet)
 router.register(r'renters', RenterProfileViewSet)
 router.register(r'places', PlaceViewSet)
 router.register(r'rents', RentViewSet, base_name='rents')
+router.register(r'renter-comments', RenterCommentViewSet, base_name='rents')
 
+place_router = router.register(r'places', PlaceViewSet, base_name='place')
+place_router.register(r'images', PlaceImageViewSet, base_name='place-image', parents_query_lookups=['place'])
 
 urlpatterns = [
     url(r'^api/v1/', include(router.urls)),

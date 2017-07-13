@@ -9,8 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-07-12.21:41:15.189</IntrospectionTimestamp>
-      <IntrospectionStateNumber>5351</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-07-13.09:44:32.978</IntrospectionTimestamp>
+      <IntrospectionStateNumber>5359</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -151,9 +151,9 @@
       <ObjectId>17620</ObjectId>
       <StateNumber>5351</StateNumber>
     </table>
-    <table id="36" parent="3" name="place_app_renting">
+    <table id="36" parent="3" name="place_app_rent">
       <ObjectId>17719</ObjectId>
-      <StateNumber>5351</StateNumber>
+      <StateNumber>5359</StateNumber>
     </table>
     <table id="37" parent="3" name="renter_renterprofile">
       <ObjectId>16618</ObjectId>
@@ -1051,7 +1051,7 @@ model</ColNames>
       <Position>4</Position>
       <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>5351</StateNumber>
+      <StateNumber>5357</StateNumber>
     </column>
     <column id="196" parent="36" name="updated">
       <Position>5</Position>
