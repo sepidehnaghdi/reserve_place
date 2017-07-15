@@ -45,6 +45,7 @@ urlpatterns = [
     url(r'^api/v1/api-token-verify', verify_jwt_token),
     url(r'^api/v1/api-token-refresh', refresh_jwt_token),
     url(r'^api/v1/files/(?P<name>.+)', database_files.views.serve, name='database_file'),
+    url(r'^api/v1/docs', include('rest_framework_docs.urls')),
 
 ]
 

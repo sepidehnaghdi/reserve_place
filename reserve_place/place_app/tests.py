@@ -705,6 +705,42 @@ class RentByRenterTestCase(APITestCase):
         response = client.post(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
+    def test_rent_place_post_out_of_range(self):
+        client = APIClient()
+        client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+        url = "/api/v1/rents"
+        data = {
+            'place': 1,
+            'check_in_date': "2017-02-15",
+            'check_out_date': "2017-02-25"
+
+        }
+        response = client.post(url, data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_rent_place_post_rent_before(self):
+        client = APIClient()
+        client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+
+        rent = Rent.objects.create(
+            id=1,
+            renter_id=3,
+            place_id=1,
+            check_in_date="2017-02-20",
+            check_out_date="2017-02-25",
+            status='r'
+        )
+
+        url = "/api/v1/rents"
+        data = {
+            'place': 1,
+            'check_in_date': "2017-02-20",
+            'check_out_date': "2017-02-25"
+
+        }
+        response = client.post(url, data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
     def test_rent_place_patch(self):
         client = APIClient()
         client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
@@ -738,6 +774,22 @@ class RentByRenterTestCase(APITestCase):
 
         response = client.delete(url, format='json')
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+
+    def test_rent_place_delete_error(self):
+        client = APIClient()
+        client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+        rent = Rent.objects.create(
+            id=1,
+            renter_id=3,
+            place_id=1,
+            check_in_date="2017-02-20",
+            check_out_date="2017-02-25",
+            status='r'
+        )
+        url = "/api/v1/rents/1"
+
+        response = client.delete(url, format='json')
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_rent_place_list(self):
         client = APIClient()
@@ -904,8 +956,8 @@ class RentByLocatorTestCase(APITestCase):
             id=1,
             renter_id=2,
             place_id=2,
-            check_in_date="2017-02-20",
-            check_out_date="2017-02-25"
+            check_in_date="2017-02-16",
+            check_out_date="2017-02-20"
         )
         url = "/api/v1/rents"
 
@@ -921,8 +973,8 @@ class RentByLocatorTestCase(APITestCase):
             id=1,
             renter_id=2,
             place_id=2,
-            check_in_date="2017-02-20",
-            check_out_date="2017-02-25"
+            check_in_date="2017-02-16",
+            check_out_date="2017-02-19"
         )
         url = "/api/v1/rents/1"
 
@@ -1044,6 +1096,82 @@ class PlaceByLocatorTestCase(APITestCase):
 
         url = "/api/v1/places"
         response = client.get(url, format='json')
+        print(response.content)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_get_places_by_province(self):
+        client = APIClient()
+        client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+
+        url = "/api/v1/places?province=teh"
+        response = client.get(url, format='json')
+        result = json.loads(response.content.decode('utf-8'))
+        self.assertEqual(len(result), 0)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_get_places_by_user(self):
+        client = APIClient()
+        client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+
+        url = "/api/v1/places?user__first_name=user3&user__last_name=userian3"
+        response = client.get(url, format='json')
+        result = json.loads(response.content.decode('utf-8'))
+        self.assertEqual(len(result), 1)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_get_places_by_address(self):
+        client = APIClient()
+        client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+
+        url = "/api/v1/places?address__contains=no"
+        response = client.get(url, format='json')
+        result = json.loads(response.content.decode('utf-8'))
+        self.assertEqual(len(result), 1)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+
+    def test_get_places_by_start_rental_period(self):
+        client = APIClient()
+        client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+
+        url = "/api/v1/places?start_rental_period__gte=2017-02-20"
+        response = client.get(url, format='json')
+        result = json.loads(response.content.decode('utf-8'))
+        self.assertEqual(len(result), 1)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+
+    def test_get_places_by_period1(self):
+        client = APIClient()
+        client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+
+        url = "/api/v1/places?start_rental_period__gte=2017-02-20&end_rental_period__lte=2017-02-26"
+        response = client.get(url, format='json')
+        print(response.content)
+        result = json.loads(response.content.decode('utf-8'))
+        self.assertEqual(len(result), 1)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_get_places_by_period2(self):
+        client = APIClient()
+        client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+
+        url = "/api/v1/places?start_rental_period__gte=2017-02-15&end_rental_period__lte=2017-02-26"
+        response = client.get(url, format='json')
+        print(response.content)
+        result = json.loads(response.content.decode('utf-8'))
+        self.assertEqual(len(result), 2)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_get_places_by_period3(self):
+        client = APIClient()
+        client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+
+        url = "/api/v1/places?start_rental_period__gte=2017-02-20&end_rental_period__lte=2017-02-30"
+        response = client.get(url, format='json')
+        print(response.content)
+        result = json.loads(response.content.decode('utf-8'))
+        self.assertEqual(len(result), 0)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_get_place(self):
@@ -1340,6 +1468,7 @@ class PlaceImageByLocatorTestCase(APITestCase):
         url = "/api/v1/places/1/images/2"
         response = client.put(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
+
 
 class PlaceImageByRenterTestCase(APITestCase):
     fixtures = ['test_place_app.json']

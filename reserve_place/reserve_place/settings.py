@@ -48,7 +48,9 @@ INSTALLED_APPS = [
     'user_app',
     'locator',
     'renter',
-    'place_app'
+    'place_app',
+    'django_filters',
+    'rest_framework_docs'
 ]
 DEFAULT_FILE_STORAGE = 'database_files.storage.DatabaseStorage'
 
@@ -131,7 +133,9 @@ REST_FRAMEWORK = {
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
-    )
+    ),
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+
 }
 JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(hours=1),

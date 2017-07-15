@@ -7,12 +7,15 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from .permissions import PlacePermission, RentPermission, RenterCommentPermission, PlaceImagePermission
 from rest_framework_extensions.mixins import NestedViewSetMixin
 from rest_framework.parsers import MultiPartParser
+from .filters import PlaceFilter
 
 
 class PlaceViewSet(viewsets.ModelViewSet):
     queryset = Place.objects.all()
     serializer_class = PlaceSerializer
     permission_classes = (IsAuthenticated, PlacePermission)
+    # filter_fields = ('user__first_name', 'user__last_name', 'province', 'city', 'address', 'place_type', 'start_rental_period', 'end_rental_period')
+    filter_class = PlaceFilter
 
 
 class RentViewSet(viewsets.ModelViewSet):

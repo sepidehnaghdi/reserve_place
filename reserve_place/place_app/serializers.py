@@ -38,6 +38,7 @@ class RentSerializer(serializers.ModelSerializer):
         return rent
 
 
+
 class PlaceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Place

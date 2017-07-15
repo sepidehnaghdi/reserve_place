@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User, Group
 from django.contrib.postgres.fields import JSONField
 from django.core.validators import MaxValueValidator, MinValueValidator
+from rest_framework.exceptions import ValidationError
 
 
 class Place(models.Model):
@@ -57,6 +58,26 @@ class Rent(models.Model):
     )
     status = models.CharField(choices=STATUS_CHOICES, null=False, blank=False, max_length=1, default='t')
     updated = models.DateField(auto_now=True)
+
+    def save(self, *args, **kwargs):
+        rents = Rent.objects.filter(place=self.place, status='r')
+        if rents.exists():
+            for rent in rents:
+                if (rent.check_out_date >= self.check_in_date and rent.check_out_date <= self.check_out_date) or \
+                        (rent.check_in_date >= self.check_in_date and rent.check_in_date <= self.check_out_date):
+                    raise ValidationError("someone reserve this place in this period before.")
+
+        if (str(self.check_in_date) < str(self.place.start_rental_period) or
+                    str(self.check_out_date) > str(self.place.end_rental_period)):
+            raise ValidationError('you cannot rent this place in this period')
+
+        super(Rent, self).save(*args, **kwargs)
+
+    def delete(self, using=None, keep_parents=False):
+        if self.status == 'r':
+            raise ValidationError('cannot delete and cancel reserved place')
+
+        super(Rent, self).delete()
 
 
 class RenterComment(models.Model):
