@@ -15,6 +15,8 @@ from rest_framework.status import HTTP_201_CREATED, HTTP_200_OK, HTTP_403_FORBID
 from rest_framework_tracking.mixins import LoggingMixin
 from .models import EmailConfirmation
 import datetime
+from locator.models import LocatorProfile
+from renter.models import RenterProfile
 
 
 class UserViewSet(LoggingMixin, viewsets.ModelViewSet):
@@ -23,6 +25,9 @@ class UserViewSet(LoggingMixin, viewsets.ModelViewSet):
     http_method_names = ('get', 'put', 'patch', 'delete')
     serializer_class = UserSerializer
 
+    def perform_destroy(self, instance):
+        instance.is_active = False
+        instance.save()
 
 class RegisterViewSet(LoggingMixin, viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -46,8 +51,12 @@ class ConfirmationViewSet(LoggingMixin, viewsets.ModelViewSet):
         try:
             confirmation_key = self.request.query_params.get('confirmation_key')
 
-            email_confirmation = EmailConfirmation.objects.get\
-                (confirmation_key=confirmation_key, expire_time__gt=datetime.datetime.now())
+            try:
+                email_confirmation = EmailConfirmation.objects.get\
+                    (confirmation_key=confirmation_key, expire_time__gt=datetime.datetime.now())
+            except:
+                from rest_framework.exceptions import NotFound
+                raise NotFound
 
             user = User.objects.get(username=email_confirmation.user.username)
             user.is_active = True

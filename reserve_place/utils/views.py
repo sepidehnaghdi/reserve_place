@@ -23,14 +23,16 @@ def generate_confirmation_key(user_email):
     except Exception as e:
         raise HTTP_400_BAD_REQUEST
 
+from django.conf import settings
 
 def send_confirmation_email(user_email, confirmation_key):
+    print("user_email:", user_email)
     try:
         send_mail(
             'Confirmation Email',
             'please click on below link to confirm your registration:'
             ' \n 127.0.0.1:8000/api/v1/confirm?confirmation_key=' + confirmation_key,
-            's.naghdi68@gmail.com',
+            settings.EMAIL_HOST_USER,
             [user_email],
             fail_silently=False,
         )

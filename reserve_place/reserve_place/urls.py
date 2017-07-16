@@ -25,15 +25,14 @@ from renter.views import RenterProfileViewSet
 from place_app.views import PlaceViewSet, RentViewSet, RenterCommentViewSet, PlaceImageViewSet
 
 router = ExtendedSimpleRouter(trailing_slash=False)
-router.register(r'users', UserViewSet, base_name="users")
-router.register(r'groups', GroupViewSet)
-router.register(r'register', RegisterViewSet)
-router.register(r'confirm', ConfirmationViewSet)
-router.register(r'locators', LocatorProfileViewSet)
-router.register(r'renters', RenterProfileViewSet)
-router.register(r'places', PlaceViewSet)
-router.register(r'rents', RentViewSet, base_name='rents')
-router.register(r'renter-comments', RenterCommentViewSet, base_name='rents')
+router.register(r'users', UserViewSet, base_name="user")
+router.register(r'groups', GroupViewSet,  base_name="group")
+router.register(r'register', RegisterViewSet,  base_name="register")
+router.register(r'confirm', ConfirmationViewSet,  base_name="confirm")
+router.register(r'locators', LocatorProfileViewSet, base_name="locator")
+router.register(r'renters', RenterProfileViewSet, base_name="renter")
+router.register(r'rents', RentViewSet, base_name='rent')
+router.register(r'renter-comments', RenterCommentViewSet, base_name='renter-comment')
 
 place_router = router.register(r'places', PlaceViewSet, base_name='place')
 place_router.register(r'images', PlaceImageViewSet, base_name='place-image', parents_query_lookups=['place'])

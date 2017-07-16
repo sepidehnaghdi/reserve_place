@@ -126,10 +126,10 @@ class UserBySuperUserTestCase(APITestCase):
         response = client.delete(url, format='json')
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         user = User.objects.filter(id=2)
-        self.assertEqual(user.count(), 0)
+        self.assertEqual(user.count(), 1)
 
         locator_profile = LocatorProfile.objects.filter(user__id=2)
-        self.assertEqual(locator_profile.count(), 0)
+        self.assertEqual(locator_profile.count(), 1)
 
     def test_update_user(self):
         client = APIClient()
@@ -145,6 +145,24 @@ class UserBySuperUserTestCase(APITestCase):
         user = User.objects.get(id=2)
         self.assertEqual(user.first_name, "sepideh")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_put_user(self):
+        client = APIClient()
+        client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+
+        data = {
+            'first_name': 'sepideh',
+            'last_name': 'naghdi',
+            'email': 'test@test.com',
+            'password': '123qwe!'
+        }
+        url = "/api/v1/users/2"
+        response = client.put(url, data, format='json')
+
+        user = User.objects.get(id=2)
+        self.assertEqual(user.first_name, "sepideh")
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
 
     def test_update_user_username(self):
         # cannot update username
@@ -201,7 +219,7 @@ class UserBySuperUserTestCase(APITestCase):
         url = "/api/v1/users"
         data = {}
         response = client.post(url, data, format='json')
-        self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
 
 class UserByNotSuperUserTestCase(APITestCase):
@@ -344,7 +362,7 @@ class UserByNotSuperUserTestCase(APITestCase):
         url = "/api/v1/users"
         data = {}
         response = client.post(url, data, format='json')
-        self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
 
 class GroupSuperUserTestCase(APITestCase):
@@ -415,6 +433,22 @@ class GroupSuperUserTestCase(APITestCase):
         group = Group.objects.get(id=1)
         self.assertEqual(group.name, 'others')
 
+    def test_patch_group(self):
+        client = APIClient()
+        client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+
+        group = Group.objects.get(id=1)
+        self.assertEqual(group.name, 'locator')
+        url = "/api/v1/groups/1"
+        data = {
+            'name': 'others'
+        }
+        response = client.patch(url, data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        group = Group.objects.get(id=1)
+        self.assertEqual(group.name, 'others')
+
     def test_delete_group(self):
         client = APIClient()
         client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
@@ -447,6 +481,14 @@ class LoginTestCase(APITestCase):
         data = {
             "username": "super_use",
             "password": "123qweASD"
+        }
+        response = self.client.post(url, data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_login_error2(self):
+        url = "/api/v1/login"
+        data = {
+            "username": "super_use",
         }
         response = self.client.post(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)

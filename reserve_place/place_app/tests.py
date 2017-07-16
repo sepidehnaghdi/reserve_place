@@ -1096,7 +1096,6 @@ class PlaceByLocatorTestCase(APITestCase):
 
         url = "/api/v1/places"
         response = client.get(url, format='json')
-        print(response.content)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_get_places_by_province(self):
@@ -1147,7 +1146,6 @@ class PlaceByLocatorTestCase(APITestCase):
 
         url = "/api/v1/places?start_rental_period__gte=2017-02-20&end_rental_period__lte=2017-02-26"
         response = client.get(url, format='json')
-        print(response.content)
         result = json.loads(response.content.decode('utf-8'))
         self.assertEqual(len(result), 1)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -1158,7 +1156,6 @@ class PlaceByLocatorTestCase(APITestCase):
 
         url = "/api/v1/places?start_rental_period__gte=2017-02-15&end_rental_period__lte=2017-02-26"
         response = client.get(url, format='json')
-        print(response.content)
         result = json.loads(response.content.decode('utf-8'))
         self.assertEqual(len(result), 2)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -1169,7 +1166,6 @@ class PlaceByLocatorTestCase(APITestCase):
 
         url = "/api/v1/places?start_rental_period__gte=2017-02-20&end_rental_period__lte=2017-02-30"
         response = client.get(url, format='json')
-        print(response.content)
         result = json.loads(response.content.decode('utf-8'))
         self.assertEqual(len(result), 0)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -1214,10 +1210,12 @@ class PlaceByLocatorTestCase(APITestCase):
 
             url = "/api/v1/places/1"
             response = client.patch(url, data, format='json')
-            self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+            self.assertEqual(response.status_code, status.HTTP_200_OK)
 
             place = Place.objects.get(id=1)
-            self.assertEqual(place.max_num_of_people, 10)
+            self.assertEqual(place.max_num_of_people, 13)
+            self.assertEqual(place.province, 'isf')
+
 
     def test_patch_place(self):
         client = APIClient()
@@ -1413,7 +1411,7 @@ class PlaceImageByLocatorTestCase(APITestCase):
         result = json.loads(response.content.decode('utf-8'))
         self.token = result['token']
 
-    def test_post_place(self):
+    def test_post_place_image(self):
         client = APIClient()
         client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
         data = {}
@@ -1425,6 +1423,19 @@ class PlaceImageByLocatorTestCase(APITestCase):
 
             response = client.post(url, data, format='multipart')
             self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
+    def test_post_place_image_for_place_of_other_locator(self):
+        client = APIClient()
+        client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+        data = {}
+        url = "/api/v1/places/2/images"
+        with open('/Users/sepidehnaghdi/Desktop/reserve_place/reserve_place/locator/tests.py') as fp:
+            data={
+                'image': fp
+            }
+
+            response = client.post(url, data, format='multipart')
+            self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
     def test_list_image_places(self):
         client = APIClient()

@@ -19,7 +19,7 @@ class UserPermission(permissions.BasePermission):
         elif view.action == 'retrieve':
             return True
 
-        elif request.method in ['POST', 'PUT', 'PATCH', 'DELETE']:
+        elif request.method in ['PUT', 'PATCH', 'DELETE']:
             return True
 
     def has_object_permission(self, request, view, obj):

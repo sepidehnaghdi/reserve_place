@@ -4,6 +4,7 @@ from rest_framework.validators import UniqueValidator
 from django.db import transaction
 from rest_framework.status import HTTP_201_CREATED, HTTP_200_OK, HTTP_403_FORBIDDEN, HTTP_404_NOT_FOUND, \
     HTTP_400_BAD_REQUEST
+from rest_framework.exceptions import ValidationError
 from json import loads, dumps
 from utils.views import generate_confirmation_key, send_confirmation_email
 from .models import EmailConfirmation
@@ -44,8 +45,8 @@ class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'username', 'password', 'email', 'first_name', 'last_name', 'groups')
-        write_only_fields = ('password', 'first_name', 'last_name', 'groups', 'email')
-        read_only_fields = ('id',)
+        # write_only_fields = ('password', 'first_name', 'last_name', 'groups', 'email')
+        # read_only_fields = ('id',)
 
     def create(self, validated_data):
         from django.contrib.auth.hashers import make_password
@@ -83,7 +84,7 @@ class RegisterSerializer(serializers.ModelSerializer):
                 send_confirmation_email(validated_data.get('email'), confirmation_key)
             except Exception as e:
                 print(str(e))
-                raise HTTP_400_BAD_REQUEST
+                raise ValidationError(str(e))
 
         return user
 
@@ -103,14 +104,7 @@ class UserSerializer(serializers.ModelSerializer):
         instance.email = validated_data.get('email', instance.email)
         instance.first_name = validated_data.get('first_name', instance.first_name)
         instance.last_name = validated_data.get('last_name', instance.last_name)
-        # instance.username = instance.username
         instance.password = make_password(validated_data.get('password', instance.password))
-
-        # new_groups = validated_data.get('groups', None)
-        # if new_groups:
-        #     instance.groups.clear()
-        #     for group in new_groups:
-        #         instance.groups.add(group)
 
         instance.save()
         return instance

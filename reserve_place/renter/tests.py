@@ -146,6 +146,36 @@ class RenterProfileBySuperUserTestCase(APITestCase):
         response = client.delete(url, format='json')
         self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
 
+
+    def test_delete_renter_user(self):
+        """
+        make a user inactive
+        is_active = False
+        :return: inactive user
+        """
+        client = APIClient()
+        client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+
+        from django.contrib.auth.models import User, Group
+        user = User.objects.filter(id=2)
+        self.assertEqual(user.count(),1)
+        self.assertEqual(user[0].is_active, True)
+        profile = RenterProfile.objects.filter(user=user)
+        self.assertEqual(profile.count(),1)
+
+        url = "/api/v1/users/2"
+        response = client.delete(url, format='json')
+
+        user = User.objects.filter(id=2)
+        self.assertEqual(user.count(),1)
+        self.assertEqual(user[0].is_active, False)
+        profile = RenterProfile.objects.filter(user=user)
+        self.assertEqual(profile.count(),1)
+
+
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+
+
     def test_patch_renter_profile_other_user(self):
         client = APIClient()
         client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)

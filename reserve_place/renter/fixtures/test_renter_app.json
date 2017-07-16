@@ -85,6 +85,7 @@
   },
   {
     "model": "renter.renterprofile",
+    "pk":1,
     "fields": {
       "user": 2,
       "contact_number": "1111",
@@ -98,6 +99,7 @@
   },
   {
     "model": "renter.renterprofile",
+    "pk":2,
     "fields": {
       "user": 3,
       "contact_number": "34323",

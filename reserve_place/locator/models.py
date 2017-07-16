@@ -8,7 +8,7 @@ class LocatorProfile(models.Model):
     user = models.OneToOneField(User, primary_key=True)
 
     contact_number = models.CharField(max_length=15, blank=True, null=True)
-    Second_contact_number = models.CharField(max_length=15, blank=True, null=True)
+    second_contact_number = models.CharField(max_length=15, blank=True, null=True)
     relative_contact_number = models.CharField(max_length=15, blank=True, null=True)
 
     image_of_national_card = models.FileField(blank=True, null=True, upload_to="national_cards")  # کارت ملی
