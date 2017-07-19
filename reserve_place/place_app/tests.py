@@ -25,9 +25,8 @@ class RenterCommentByRenterTestCase(APITestCase):
     def test_renter_comment_post_not_rent_before(self):
         client = APIClient()
         client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
-        url = "/api/v1/renter-comments"
+        url = "/api/v1/places/1/comments"
         data = {
-            'place': 1,
             'facilities_score': "3",
             'cleanness_score': "3",
             'surroundings_score': "3",
@@ -51,9 +50,8 @@ class RenterCommentByRenterTestCase(APITestCase):
             status='r'
         )
 
-        url = "/api/v1/renter-comments"
+        url = "/api/v1/places/1/comments"
         data = {
-            'place': 1,
             'facilities_score': 3,
             'cleanness_score': 3,
             'surroundings_score': 3,
@@ -89,7 +87,7 @@ class RenterCommentByRenterTestCase(APITestCase):
             comment="this is a test comment"
         )
 
-        url = "/api/v1/renter-comments/1"
+        url = "/api/v1/places/1/comments/1"
 
         response = client.delete(url, format='json')
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
@@ -119,7 +117,7 @@ class RenterCommentByRenterTestCase(APITestCase):
             comment="this is a test comment"
         )
 
-        url = "/api/v1/renter-comments/1"
+        url = "/api/v1/places/1/comments/1"
         data = {
             'facilities_score': 4,
             'cleanness_score': 4,
@@ -155,9 +153,8 @@ class RenterCommentByRenterTestCase(APITestCase):
             comment="this is a test comment"
         )
 
-        url = "/api/v1/renter-comments/1"
+        url = "/api/v1/places/1/comments/1"
         data = {
-            'place': 1,
             'facilities_score': 4,
             'cleanness_score': 4,
             'surroundings_score': 4,
@@ -196,7 +193,7 @@ class RenterCommentByRenterTestCase(APITestCase):
             comment="this is a test comment"
         )
 
-        url = "/api/v1/renter-comments"
+        url = "/api/v1/places/1/comments"
 
         response = client.get(url, format='json')
         result = json.loads(response.content.decode('utf-8'))
@@ -228,7 +225,7 @@ class RenterCommentByRenterTestCase(APITestCase):
             comment="this is a test comment"
         )
 
-        url = "/api/v1/renter-comments/1"
+        url = "/api/v1/places/1/comments/1"
 
         response = client.get(url, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -251,9 +248,8 @@ class RenterCommentByLocatorTestCase(APITestCase):
     def test_renter_comment_post_not_rent_before(self):
         client = APIClient()
         client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
-        url = "/api/v1/renter-comments"
+        url = "/api/v1/places/1/comments"
         data = {
-            'place': 1,
             'facilities_score': "3",
             'cleanness_score': "3",
             'surroundings_score': "3",
@@ -277,9 +273,8 @@ class RenterCommentByLocatorTestCase(APITestCase):
             status='r'
         )
 
-        url = "/api/v1/renter-comments"
+        url = "/api/v1/places/1/comments"
         data = {
-            'place': 1,
             'facilities_score': 3,
             'cleanness_score': 3,
             'surroundings_score': 3,
@@ -315,7 +310,7 @@ class RenterCommentByLocatorTestCase(APITestCase):
             comment="this is a test comment"
         )
 
-        url = "/api/v1/renter-comments/1"
+        url = "/api/v1/places/1/comments/1"
 
         response = client.delete(url, format='json')
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
@@ -345,7 +340,7 @@ class RenterCommentByLocatorTestCase(APITestCase):
             comment="this is a test comment"
         )
 
-        url = "/api/v1/renter-comments/1"
+        url = "/api/v1/places/1/comments/1"
         data = {
             'facilities_score': 4,
             'cleanness_score': 4,
@@ -379,9 +374,8 @@ class RenterCommentByLocatorTestCase(APITestCase):
             comment="this is a test comment"
         )
 
-        url = "/api/v1/renter-comments/1"
+        url = "/api/v1/places/1/comments/1"
         data = {
-            'place': 1,
             'facilities_score': 4,
             'cleanness_score': 4,
             'surroundings_score': 4,
@@ -418,7 +412,7 @@ class RenterCommentByLocatorTestCase(APITestCase):
             comment="this is a test comment"
         )
 
-        url = "/api/v1/renter-comments"
+        url = "/api/v1/places/1/comments"
 
         response = client.get(url, format='json')
         result = json.loads(response.content.decode('utf-8'))
@@ -450,7 +444,7 @@ class RenterCommentByLocatorTestCase(APITestCase):
             comment="this is a test comment"
         )
 
-        url = "/api/v1/renter-comments/1"
+        url = "/api/v1/places/1/comments/1"
 
         response = client.get(url, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -473,9 +467,8 @@ class RenterCommentBySuperUserTestCase(APITestCase):
     def test_renter_comment_post_not_rent_before(self):
         client = APIClient()
         client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
-        url = "/api/v1/renter-comments"
+        url = "/api/v1/places/1/comments"
         data = {
-            'place': 1,
             'facilities_score': "3",
             'cleanness_score': "3",
             'surroundings_score': "3",
@@ -499,9 +492,8 @@ class RenterCommentBySuperUserTestCase(APITestCase):
             status='r'
         )
 
-        url = "/api/v1/renter-comments"
+        url = "/api/v1/places/1/comments"
         data = {
-            'place': 1,
             'facilities_score': 3,
             'cleanness_score': 3,
             'surroundings_score': 3,
@@ -537,7 +529,7 @@ class RenterCommentBySuperUserTestCase(APITestCase):
             comment="this is a test comment"
         )
 
-        url = "/api/v1/renter-comments/1"
+        url = "/api/v1/places/1/comments/1"
 
         response = client.delete(url, format='json')
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
@@ -567,7 +559,7 @@ class RenterCommentBySuperUserTestCase(APITestCase):
             comment="this is a test comment"
         )
 
-        url = "/api/v1/renter-comments/1"
+        url = "/api/v1/places/1/comments/1"
         data = {
             'facilities_score': 4,
             'cleanness_score': 4,
@@ -601,7 +593,7 @@ class RenterCommentBySuperUserTestCase(APITestCase):
             comment="this is a test comment"
         )
 
-        url = "/api/v1/renter-comments/1"
+        url = "/api/v1/places/1/comments/1"
         data = {
             'place': 1,
             'facilities_score': 4,
@@ -640,7 +632,7 @@ class RenterCommentBySuperUserTestCase(APITestCase):
             comment="this is a test comment"
         )
 
-        url = "/api/v1/renter-comments"
+        url = "/api/v1/places/1/comments"
 
         response = client.get(url, format='json')
         result = json.loads(response.content.decode('utf-8'))
@@ -672,7 +664,7 @@ class RenterCommentBySuperUserTestCase(APITestCase):
             comment="this is a test comment"
         )
 
-        url = "/api/v1/renter-comments/1"
+        url = "/api/v1/places/1/comments/1"
 
         response = client.get(url, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -808,6 +800,40 @@ class RentByRenterTestCase(APITestCase):
         self.assertEqual(len(result), 1)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
+    def test_rent_place_list_by_place_not_rent(self):
+        client = APIClient()
+        client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+        rent = Rent.objects.create(
+            id=1,
+            renter_id=3,
+            place_id=1,
+            check_in_date="2017-02-20",
+            check_out_date="2017-02-25"
+        )
+        url = "/api/v1/rents?place=2"
+
+        response = client.get(url, format='json')
+        result = json.loads(response.content.decode('utf-8'))
+        self.assertEqual(len(result), 0)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_rent_place_list_by_place(self):
+        client = APIClient()
+        client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+        rent = Rent.objects.create(
+            id=1,
+            renter_id=3,
+            place_id=1,
+            check_in_date="2017-02-20",
+            check_out_date="2017-02-25"
+        )
+        url = "/api/v1/rents?place=1"
+
+        response = client.get(url, format='json')
+        result = json.loads(response.content.decode('utf-8'))
+        self.assertEqual(len(result), 1)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
     def test_rent_place_retrieve(self):
         client = APIClient()
         client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
@@ -932,6 +958,40 @@ class RentByLocatorTestCase(APITestCase):
         response = client.get(url, format='json')
         result = json.loads(response.content.decode('utf-8'))
         self.assertEqual(len(result), 1)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_rent_place_list_by_place_id(self):
+        client = APIClient()
+        client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+        rent = Rent.objects.create(
+            id=1,
+            renter_id=3,
+            place_id=1,
+            check_in_date="2017-02-20",
+            check_out_date="2017-02-25"
+        )
+        url = "/api/v1/rents?place=1"
+
+        response = client.get(url, format='json')
+        result = json.loads(response.content.decode('utf-8'))
+        self.assertEqual(len(result), 1)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_rent_place_list_by_place_id2(self):
+        client = APIClient()
+        client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+        rent = Rent.objects.create(
+            id=1,
+            renter_id=3,
+            place_id=1,
+            check_in_date="2017-02-20",
+            check_out_date="2017-02-25"
+        )
+        url = "/api/v1/rents?place=3"
+
+        response = client.get(url, format='json')
+        result = json.loads(response.content.decode('utf-8'))
+        self.assertEqual(len(result), 0)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_rent_place_retrieve(self):

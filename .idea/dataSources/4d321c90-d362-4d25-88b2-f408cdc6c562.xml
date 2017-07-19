@@ -9,8 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-07-15.22:25:25.576</IntrospectionTimestamp>
-      <IntrospectionStateNumber>5874</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-07-19.21:13:08.619</IntrospectionTimestamp>
+      <IntrospectionStateNumber>7959</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -800,10 +800,10 @@ model</ColNames>
       <DataType>varchar(15)|0</DataType>
       <StateNumber>3636</StateNumber>
     </column>
-    <column id="151" parent="36" name="Second_contact_number">
+    <column id="151" parent="36" name="second_contact_number">
       <Position>3</Position>
       <DataType>varchar(15)|0</DataType>
-      <StateNumber>3636</StateNumber>
+      <StateNumber>7959</StateNumber>
     </column>
     <column id="152" parent="36" name="relative_contact_number">
       <Position>4</Position>

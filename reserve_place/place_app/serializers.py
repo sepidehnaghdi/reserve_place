@@ -1,3 +1,4 @@
+from django.shortcuts import get_object_or_404
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
 from .models import Place, Rent, RenterComment, PlaceImage
@@ -13,10 +14,13 @@ class RenterCommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = RenterComment
         fields = '__all__'
-        read_only_fields = ('renter',)
+        read_only_fields = ('renter', 'place')
 
     def create(self, validated_data):
         validated_data["renter"] = self.context['request'].user
+        place_id = self.context['view'].kwargs['parent_lookup_place']
+        place = get_object_or_404(Place, id=place_id)
+        validated_data["place"] = place
         rent = Rent.objects.filter(renter=validated_data['renter'], place=validated_data['place'], status='r')
         if not rent.exists():
             raise PermissionDenied

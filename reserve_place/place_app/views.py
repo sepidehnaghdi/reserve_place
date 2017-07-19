@@ -14,7 +14,6 @@ from rest_framework.exceptions import PermissionDenied
 
 class PlaceViewSet(viewsets.ModelViewSet):
     queryset = Place.objects.all()
-    # serializer_class = PlaceSerializer
     permission_classes = (IsAuthenticated, PlacePermission)
     filter_class = PlaceFilter
 
@@ -40,6 +39,10 @@ class RentViewSet(viewsets.ModelViewSet):
         if 'locator' in user_groups:
             queryset = queryset.filter(place__user=self.request.user)
 
+        place = self.request.query_params.get('place', None)
+        if place:
+            queryset = queryset.filter(place_id=place)
+
         return queryset
 
 
@@ -47,6 +50,11 @@ class RenterCommentViewSet(viewsets.ModelViewSet):
     queryset = RenterComment.objects.all()
     serializer_class = RenterCommentSerializer
     permission_classes = (IsAuthenticated, RenterCommentPermission)
+
+    def get_queryset(self):
+        queryset = RenterComment.objects.all()
+        queryset = queryset.filter(place=self.kwargs['parent_lookup_place'])
+        return queryset
 
 
 class PlaceImageViewSet(NestedViewSetMixin, viewsets.ModelViewSet):

@@ -32,10 +32,10 @@ router.register(r'confirm', ConfirmationViewSet,  base_name="confirm")
 router.register(r'locators', LocatorProfileViewSet, base_name="locator")
 router.register(r'renters', RenterProfileViewSet, base_name="renter")
 router.register(r'rents', RentViewSet, base_name='rent')
-router.register(r'renter-comments', RenterCommentViewSet, base_name='renter-comment')
 
 place_router = router.register(r'places', PlaceViewSet, base_name='place')
 place_router.register(r'images', PlaceImageViewSet, base_name='place-image', parents_query_lookups=['place'])
+place_router.register(r'comments', RenterCommentViewSet, base_name='comment', parents_query_lookups=['place'])
 
 urlpatterns = [
     url(r'^api/v1/', include(router.urls)),
