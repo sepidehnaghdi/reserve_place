@@ -6,10 +6,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/4d321c90-d362-4d25-88b2-f408cdc6c562/_metadata_/metadata.values.at" afterPath="$PROJECT_DIR$/.idea/dataSources/4d321c90-d362-4d25-88b2-f408cdc6c562/_metadata_/metadata.values.at" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/4d321c90-d362-4d25-88b2-f408cdc6c562.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/4d321c90-d362-4d25-88b2-f408cdc6c562.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reserve_place/place_app/models.py" afterPath="$PROJECT_DIR$/reserve_place/place_app/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reserve_place/place_app/serializers.py" afterPath="$PROJECT_DIR$/reserve_place/place_app/serializers.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reserve_place/place_app/tests.py" afterPath="$PROJECT_DIR$/reserve_place/place_app/tests.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reserve_place/place_app/views.py" afterPath="$PROJECT_DIR$/reserve_place/place_app/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reserve_place/reserve_place/urls.py" afterPath="$PROJECT_DIR$/reserve_place/reserve_place/urls.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,27 +31,29 @@
     <SUITE FILE_PATH="coverage/reserve_place$Test__user_app_tests_UserTestCase___keepdb.coverage" NAME="Test: user_app.tests.UserTestCase --keepdb Coverage Results" MODIFIED="1498722136731" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__locator_app___keepdb.coverage" NAME="Test: locator_app --keepdb Coverage Results" MODIFIED="1499319060222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__user_app_tests_LoginTestCase___keepdb.coverage" NAME="Test: user_app.tests.LoginTestCase --keepdb Coverage Results" MODIFIED="1500212194531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/reserve_place$Test__place_app_tests_PlaceByLocatorTestCase___keepdb.coverage" NAME="Test: place_app.tests.PlaceByLocatorTestCase --keepdb Coverage Results" MODIFIED="1500136442309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__place_app_tests_RenterCommentByLocatorTestCase___keepdb.coverage" NAME="Test: place_app.tests.RenterCommentByLocatorTestCase --keepdb Coverage Results" MODIFIED="1500487265992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/reserve_place$Test__place_app_tests_PlaceByLocatorTestCase___keepdb.coverage" NAME="Test: place_app.tests.PlaceByLocatorTestCase --keepdb Coverage Results" MODIFIED="1500540925511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__locator_app_tests_LocatorProfileTestCase_test_post_locator_profile_other_user___keepdb.coverage" NAME="Test: locator_app.tests.LocatorProfileTestCase.test_post_locator_profile_other_user --keepdb Coverage Results" MODIFIED="1499009000373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__place_app_tests_RentBySuperUserTestCase___keepdb.coverage" NAME="Test: place_app.tests.RentBySuperUserTestCase --keepdb Coverage Results" MODIFIED="1499886639845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__locator_app_tests___keepdb.coverage" NAME="Test: locator_app.tests --keepdb Coverage Results" MODIFIED="1499015584534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__user_app_tests_UserBySuperUserTestCase___keepdb.coverage" NAME="Test: user_app.tests.UserBySuperUserTestCase --keepdb Coverage Results" MODIFIED="1498723911123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__place_app_tests_RentByRenterTestCase.coverage" NAME="Test: place_app.tests.RentByRenterTestCase Coverage Results" MODIFIED="1499882544432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/reserve_place$Test__place_app___keepdb.coverage" NAME="Test: place_app --keepdb Coverage Results" MODIFIED="1500487413486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/reserve_place$Test__place_app___keepdb.coverage" NAME="Test: place_app --keepdb Coverage Results" MODIFIED="1500541365927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test____keepdb.coverage" NAME="Test: --keepdb Coverage Results" MODIFIED="1500212247184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__place_app_tests_RenterCommentBySuperUserTestCase___keepdb.coverage" NAME="Test: place_app.tests.RenterCommentBySuperUserTestCase --keepdb Coverage Results" MODIFIED="1500487400648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__locator_app_tests_LocatorProfileBySuperUserTestCase_test_post_locator_profile___keepdb.coverage" NAME="Test: locator_app.tests.LocatorProfileBySuperUserTestCase.test_post_locator_profile --keepdb Coverage Results" MODIFIED="1499015575170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/reserve_place$Test__place_app_tests_RentByRenterTestCase___keepdb.coverage" NAME="Test: place_app.tests.RentByRenterTestCase --keepdb Coverage Results" MODIFIED="1500483878881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/reserve_place$Test__place_app_tests_RentByRenterTestCase___keepdb.coverage" NAME="Test: place_app.tests.RentByRenterTestCase --keepdb Coverage Results" MODIFIED="1500541234335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__renter_tests_RenterProfileBySuperUserTestCase_test_delete_renter_user___keepdb.coverage" NAME="Test: renter.tests.RenterProfileBySuperUserTestCase.test_delete_renter_user --keepdb Coverage Results" MODIFIED="1500214878048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__user_app_tests_UserBySuperUserTestCase_test_update_user_password___keepdb.coverage" NAME="Test: user_app.tests.UserBySuperUserTestCase.test_update_user_password --keepdb Coverage Results" MODIFIED="1498724440087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__user_app_tests_UserByNotSuperUserTestCase___keepdb.coverage" NAME="Test: user_app.tests.UserByNotSuperUserTestCase --keepdb Coverage Results" MODIFIED="1498725588847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__user_app_tests_UserByNotSuperUserTestCase_test_update_user_group___keepdb.coverage" NAME="Test: user_app.tests.UserByNotSuperUserTestCase.test_update_user_group --keepdb Coverage Results" MODIFIED="1499342675736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__user_app___keepdb.coverage" NAME="Test: user_app --keepdb Coverage Results" MODIFIED="1500216362904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/reserve_place$Test__place_app_tests_RenterCommentByLocatorTestCase_test_renter_comment_retrieve___keepdb.coverage" NAME="Test: place_app.tests.RenterCommentByLocatorTestCase.test_renter_comment_retrieve --keepdb Coverage Results" MODIFIED="1500538635585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__user_app_tests___keepdb.coverage" NAME="Test: user_app.tests --keepdb Coverage Results" MODIFIED="1498731436709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__renter_tests_RenterProfileBySuperUserTestCase___keepdb.coverage" NAME="Test: renter.tests.RenterProfileBySuperUserTestCase --keepdb Coverage Results" MODIFIED="1500214243718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__user_app_tests_UserBySuperUserTestCase_test_update_user_username___keepdb.coverage" NAME="Test: user_app.tests.UserBySuperUserTestCase.test_update_user_username --keepdb Coverage Results" MODIFIED="1498724817442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__locator_app_tests_LocatorProfileBySuperUserTestCase___keepdb.coverage" NAME="Test: locator_app.tests.LocatorProfileBySuperUserTestCase --keepdb Coverage Results" MODIFIED="1499015322710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/reserve_place$Test__place_app_tests_PlaceByLocatorTestCase_test_delete_place___keepdb.coverage" NAME="Test: place_app.tests.PlaceByLocatorTestCase.test_delete_place --keepdb Coverage Results" MODIFIED="1500540589152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__user_app_tests_GroupSuperUserTestCase___keepdb.coverage" NAME="Test: user_app.tests.GroupSuperUserTestCase --keepdb Coverage Results" MODIFIED="1498729889629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__place_app_tests_RentByLocatorTestCase___keepdb.coverage" NAME="Test: place_app.tests.RentByLocatorTestCase --keepdb Coverage Results" MODIFIED="1500485007418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/reserve_place$Test__place_app_tests_PlaceImageByLocatorTestCase___keepdb.coverage" NAME="Test: place_app.tests.PlaceImageByLocatorTestCase --keepdb Coverage Results" MODIFIED="1499939324592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -118,7 +120,7 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reserve_place/reserve_place/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
+            <state relative-caret-position="504">
               <caret line="37" column="44" lean-forward="false" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
               <folding>
                 <element signature="e#647#668#0" expanded="true" />
@@ -130,10 +132,13 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/reserve_place/place_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="218">
+              <caret line="15" column="52" lean-forward="false" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
+                <element signature="e#1262#1875#0" expanded="false" />
+                <element signature="e#1933#2507#0" expanded="false" />
+                <element signature="e#2582#3327#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -142,9 +147,12 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reserve_place/place_app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="82" column="6" lean-forward="false" selection-start-line="82" selection-start-column="6" selection-end-line="82" selection-end-column="6" />
-              <folding />
+            <state relative-caret-position="1152">
+              <caret line="69" column="58" lean-forward="false" selection-start-line="69" selection-start-column="58" selection-end-line="69" selection-end-column="58" />
+              <folding>
+                <element signature="e#4298#5401#0" expanded="false" />
+                <element signature="e#5440#5707#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -152,11 +160,12 @@
       <file leaf-file-name="tests.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reserve_place/place_app/tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="452" column="38" lean-forward="false" selection-start-line="452" selection-start-column="6" selection-end-line="452" selection-end-column="38" />
+            <state relative-caret-position="418">
+              <caret line="717" column="0" lean-forward="false" selection-start-line="717" selection-start-column="0" selection-end-line="717" selection-end-column="0" />
               <folding>
+                <element signature="e#370#7049#0" expanded="false" />
                 <element signature="e#452#730#0" expanded="false" />
-                <element signature="e#7107#13565#0" expanded="false" />
+                <element signature="e#7107#13687#0" expanded="false" />
                 <element signature="e#7189#7467#0" expanded="false" />
                 <element signature="e#7533#8058#0" expanded="false" />
                 <element signature="e#8108#8842#0" expanded="false" />
@@ -164,61 +173,70 @@
                 <element signature="e#9749#10654#0" expanded="false" />
                 <element signature="e#10703#11772#0" expanded="false" />
                 <element signature="e#11822#12717#0" expanded="false" />
-                <element signature="e#12771#13565#0" expanded="false" />
-                <element signature="e#13707#13990#0" expanded="false" />
-                <element signature="e#14056#14581#0" expanded="false" />
-                <element signature="e#14631#15365#0" expanded="false" />
-                <element signature="e#15417#16222#0" expanded="false" />
-                <element signature="e#16273#17178#0" expanded="false" />
-                <element signature="e#17227#18320#0" expanded="false" />
-                <element signature="e#18370#19265#0" expanded="false" />
-                <element signature="e#19319#20113#0" expanded="false" />
-                <element signature="e#20161#27001#0" expanded="false" />
-                <element signature="e#20243#20521#0" expanded="false" />
-                <element signature="e#20567#20951#0" expanded="false" />
-                <element signature="e#21010#21398#0" expanded="false" />
-                <element signature="e#21456#22063#0" expanded="false" />
-                <element signature="e#22110#22672#0" expanded="false" />
-                <element signature="e#22720#23161#0" expanded="false" />
-                <element signature="e#23215#23681#0" expanded="false" />
-                <element signature="e#23727#24258#0" expanded="false" />
-                <element signature="e#24916#25455#0" expanded="false" />
-                <element signature="e#25505#25935#0" expanded="false" />
-                <element signature="e#25982#26513#0" expanded="false" />
-                <element signature="e#26564#27001#0" expanded="false" />
-                <element signature="e#27050#32257#0" expanded="false" />
-                <element signature="e#27132#27410#0" expanded="false" />
-                <element signature="e#27456#27842#0" expanded="false" />
-                <element signature="e#27889#28451#0" expanded="false" />
-                <element signature="e#28499#28939#0" expanded="false" />
-                <element signature="e#28985#29516#0" expanded="false" />
-                <element signature="e#29574#30113#0" expanded="false" />
-                <element signature="e#32308#35259#0" expanded="false" />
-                <element signature="e#32390#32673#0" expanded="false" />
-                <element signature="e#32719#33105#0" expanded="false" />
-                <element signature="e#33152#33714#0" expanded="false" />
-                <element signature="e#33762#34202#0" expanded="false" />
-                <element signature="e#34248#34779#0" expanded="false" />
-                <element signature="e#34829#35259#0" expanded="false" />
-                <element signature="e#35309#41421#0" expanded="false" />
-                <element signature="e#35391#35669#0" expanded="false" />
-                <element signature="e#39342#39609#0" expanded="false" />
-                <element signature="e#40779#41421#0" expanded="false" />
-                <element signature="e#41470#43657#0" expanded="false" />
-                <element signature="e#41552#41830#0" expanded="false" />
-                <element signature="e#41871#42107#0" expanded="false" />
-                <element signature="e#42147#42385#0" expanded="false" />
-                <element signature="e#42426#42693#0" expanded="false" />
-                <element signature="e#42736#42984#0" expanded="false" />
-                <element signature="e#43026#43657#0" expanded="false" />
-                <element signature="e#43709#47159#0" expanded="false" />
-                <element signature="e#44115#44351#0" expanded="false" />
-                <element signature="e#44391#44629#0" expanded="false" />
-                <element signature="e#44670#46201#0" expanded="false" />
-                <element signature="e#46244#46493#0" expanded="false" />
-                <element signature="e#46535#47159#0" expanded="false" />
-                <element signature="e#50229#52640#0" expanded="false" />
-                <element signature="e#52696#55129#0" expanded="false" />
+                <element signature="e#13747#20235#0" expanded="false" />
+                <element signature="e#14178#14703#0" expanded="false" />
+                <element signature="e#14753#15487#0" expanded="false" />
+                <element signature="e#15539#16344#0" expanded="false" />
+                <element signature="e#16395#17300#0" expanded="false" />
+                <element signature="e#17349#18442#0" expanded="false" />
+                <element signature="e#18492#19387#0" expanded="false" />
+                <element signature="e#19441#20235#0" expanded="false" />
+                <element signature="e#20365#20643#0" expanded="false" />
+                <element signature="e#21674#22062#0" expanded="false" />
+                <element signature="e#22120#22727#0" expanded="false" />
+                <element signature="e#22774#23336#0" expanded="false" />
+                <element signature="e#23384#23825#0" expanded="false" />
+                <element signature="e#23879#24345#0" expanded="false" />
+                <element signature="e#24391#24922#0" expanded="false" />
+                <element signature="e#24986#25525#0" expanded="false" />
+                <element signature="e#25580#26119#0" expanded="false" />
+                <element signature="e#26169#26599#0" expanded="false" />
+                <element signature="e#26646#27177#0" expanded="false" />
+                <element signature="e#27228#27665#0" expanded="false" />
+                <element signature="e#27714#32921#0" expanded="false" />
+                <element signature="e#27796#28074#0" expanded="false" />
+                <element signature="e#28120#28506#0" expanded="false" />
+                <element signature="e#28553#29115#0" expanded="false" />
+                <element signature="e#29163#29603#0" expanded="false" />
+                <element signature="e#29649#30180#0" expanded="false" />
+                <element signature="e#30238#30777#0" expanded="false" />
+                <element signature="e#32972#35923#0" expanded="false" />
+                <element signature="e#33054#33337#0" expanded="false" />
+                <element signature="e#33383#33769#0" expanded="false" />
+                <element signature="e#33816#34378#0" expanded="false" />
+                <element signature="e#34426#34866#0" expanded="false" />
+                <element signature="e#34912#35443#0" expanded="false" />
+                <element signature="e#35493#35923#0" expanded="false" />
+                <element signature="e#35973#42260#0" expanded="false" />
+                <element signature="e#36055#36333#0" expanded="false" />
+                <element signature="e#36374#36610#0" expanded="false" />
+                <element signature="e#36663#37015#0" expanded="false" />
+                <element signature="e#37064#37451#0" expanded="false" />
+                <element signature="e#37503#37863#0" expanded="false" />
+                <element signature="e#37927#38302#0" expanded="false" />
+                <element signature="e#38354#38763#0" expanded="false" />
+                <element signature="e#38815#39224#0" expanded="false" />
+                <element signature="e#39276#39685#0" expanded="false" />
+                <element signature="e#39725#39963#0" expanded="false" />
+                <element signature="e#40004#40271#0" expanded="false" />
+                <element signature="e#40314#40741#0" expanded="false" />
+                <element signature="e#40795#41576#0" expanded="false" />
+                <element signature="e#41618#42260#0" expanded="false" />
+                <element signature="e#42309#44496#0" expanded="false" />
+                <element signature="e#42391#42669#0" expanded="false" />
+                <element signature="e#42710#42946#0" expanded="false" />
+                <element signature="e#42986#43224#0" expanded="false" />
+                <element signature="e#43265#43532#0" expanded="false" />
+                <element signature="e#43575#43823#0" expanded="false" />
+                <element signature="e#43865#44496#0" expanded="false" />
+                <element signature="e#44548#47998#0" expanded="false" />
+                <element signature="e#44954#45190#0" expanded="false" />
+                <element signature="e#45230#45468#0" expanded="false" />
+                <element signature="e#45509#47040#0" expanded="false" />
+                <element signature="e#47083#47332#0" expanded="false" />
+                <element signature="e#47374#47998#0" expanded="false" />
+                <element signature="e#51068#53479#0" expanded="false" />
+                <element signature="e#53535#55968#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -227,14 +245,13 @@
       <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reserve_place/place_app/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="197">
+              <caret line="40" column="18" lean-forward="false" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
-                <element signature="e#1221#1527#0" expanded="false" />
-                <element signature="e#1601#1816#0" expanded="false" />
-                <element signature="e#1875#2155#0" expanded="false" />
-                <element signature="e#2231#3787#0" expanded="false" />
+                <element signature="e#1867#2082#0" expanded="false" />
+                <element signature="e#2141#2421#0" expanded="false" />
+                <element signature="e#2497#4053#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -243,8 +260,8 @@
       <file leaf-file-name="permissions.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reserve_place/place_app/permissions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="26" column="6" lean-forward="false" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+            <state relative-caret-position="104">
+              <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
                 <element signature="e#1679#2618#0" expanded="false" />
               </folding>
@@ -274,8 +291,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>DEFAULT_AUTHENTICATION_CLASSES</find>
-      <find>StringIO</find>
       <find>original_name</find>
       <find>AUTHENTICATION</find>
       <find>_app</find>
@@ -301,9 +316,11 @@
       <find>password</find>
       <find>HTTP_400_BAD_REQUEST</find>
       <find>print</find>
-      <find>delete</find>
       <find>rents</find>
       <find>renter-comments</find>
+      <find>delete</find>
+      <find>decod</find>
+      <find>get_object_or_404</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -353,9 +370,9 @@
         <option value="$PROJECT_DIR$/reserve_place/user_app/models.py" />
         <option value="$PROJECT_DIR$/reserve_place/user_app/views.py" />
         <option value="$PROJECT_DIR$/reserve_place/locator/models.py" />
-        <option value="$PROJECT_DIR$/reserve_place/place_app/models.py" />
-        <option value="$PROJECT_DIR$/reserve_place/place_app/serializers.py" />
         <option value="$PROJECT_DIR$/reserve_place/reserve_place/urls.py" />
+        <option value="$PROJECT_DIR$/reserve_place/place_app/serializers.py" />
+        <option value="$PROJECT_DIR$/reserve_place/place_app/models.py" />
         <option value="$PROJECT_DIR$/reserve_place/place_app/tests.py" />
         <option value="$PROJECT_DIR$/reserve_place/place_app/views.py" />
       </list>
@@ -368,8 +385,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="25" />
+    <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="833" />
   </component>
@@ -914,35 +930,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Test__place_app_--keepdb - 2017.07.19 at 22h 33m 53s.xml">
+    <history-entry file="Test__place_app_--keepdb - 2017.07.20 at 13h 33m 05s.xml">
       <configuration name="Test: place_app --keepdb" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__place_app_tests_RenterCommentByLocatorTestCase_--keepdb - 2017.07.19 at 22h 31m 08s.xml">
-      <configuration name="Test: place_app.tests.RenterCommentByLocatorTestCase --keepdb" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__place_app_tests_PlaceByLocatorTestCase_--keepdb - 2017.07.20 at 13h 25m 29s.xml">
+      <configuration name="Test: place_app.tests.PlaceByLocatorTestCase --keepdb" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__place_app_tests_RenterCommentByRenterTestCase_--keepdb - 2017.07.19 at 22h 14m 24s.xml">
-      <configuration name="Test: place_app.tests.RenterCommentByRenterTestCase --keepdb" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__place_app_tests_PlaceByLocatorTestCase_test_delete_place_--keepdb - 2017.07.20 at 13h 19m 22s.xml">
+      <configuration name="Test: place_app.tests.PlaceByLocatorTestCase.test_delete_place --keepdb" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__place_app_tests_RenterCommentByRenterTestCase_--keepdb - 2017.07.19 at 22h 16m 22s.xml">
-      <configuration name="Test: place_app.tests.RenterCommentByRenterTestCase --keepdb" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__place_app_tests_PlaceByLocatorTestCase_test_delete_place_--keepdb - 2017.07.20 at 13h 19m 50s.xml">
+      <configuration name="Test: place_app.tests.PlaceByLocatorTestCase.test_delete_place --keepdb" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__place_app_tests_RenterCommentByRenterTestCase_--keepdb - 2017.07.19 at 22h 18m 46s.xml">
-      <configuration name="Test: place_app.tests.RenterCommentByRenterTestCase --keepdb" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__place_app_tests_RentByRenterTestCase_--keepdb - 2017.07.20 at 13h 26m 38s.xml">
+      <configuration name="Test: place_app.tests.RentByRenterTestCase --keepdb" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__place_app_tests_RenterCommentByRenterTestCase_--keepdb - 2017.07.19 at 22h 19m 06s.xml">
-      <configuration name="Test: place_app.tests.RenterCommentByRenterTestCase --keepdb" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__place_app_tests_RentByRenterTestCase_--keepdb - 2017.07.20 at 13h 28m 02s.xml">
+      <configuration name="Test: place_app.tests.RentByRenterTestCase --keepdb" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__place_app_tests_RenterCommentByRenterTestCase_--keepdb - 2017.07.19 at 22h 20m 16s.xml">
-      <configuration name="Test: place_app.tests.RenterCommentByRenterTestCase --keepdb" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__place_app_tests_RentByRenterTestCase_--keepdb - 2017.07.20 at 13h 29m 25s.xml">
+      <configuration name="Test: place_app.tests.RentByRenterTestCase --keepdb" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__place_app_tests_RenterCommentByRenterTestCase_--keepdb - 2017.07.19 at 22h 27m 35s.xml">
-      <configuration name="Test: place_app.tests.RenterCommentByRenterTestCase --keepdb" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__place_app_tests_RentByRenterTestCase_--keepdb - 2017.07.20 at 13h 29m 44s.xml">
+      <configuration name="Test: place_app.tests.RentByRenterTestCase --keepdb" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__place_app_tests_RenterCommentByRenterTestCase_--keepdb - 2017.07.19 at 22h 28m 24s.xml">
-      <configuration name="Test: place_app.tests.RenterCommentByRenterTestCase --keepdb" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__place_app_tests_RentByRenterTestCase_--keepdb - 2017.07.20 at 13h 30m 04s.xml">
+      <configuration name="Test: place_app.tests.RentByRenterTestCase --keepdb" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__place_app_tests_RenterCommentBySuperUserTestCase_--keepdb - 2017.07.19 at 22h 33m 23s.xml">
-      <configuration name="Test: place_app.tests.RenterCommentBySuperUserTestCase --keepdb" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__place_app_tests_RentByRenterTestCase_--keepdb - 2017.07.20 at 13h 30m 38s.xml">
+      <configuration name="Test: place_app.tests.RentByRenterTestCase --keepdb" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -955,17 +971,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="25" width="1440" height="833" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="833" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2274678" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23032904" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928476" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="manage.py@reserve_place" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34412956" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.317139" sideWeight="0.5135909" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20600858" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928476" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928476" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28879893" sideWeight="0.48640916" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28879893" sideWeight="0.48640916" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24966262" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -990,13 +1006,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/reserve_place/place_app/serializers.py</url>
-          <line>31</line>
+          <line>38</line>
           <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/reserve_place/place_app/tests.py</url>
-          <line>421</line>
-          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="15" />
@@ -1125,7 +1136,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="3960" column="8" lean-forward="false" selection-start-line="3960" selection-start-column="8" selection-end-line="3960" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1317,7 +1327,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1350,6 +1359,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/reserve_place/reserve_place/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="37" column="44" lean-forward="false" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
+          <folding>
+            <element signature="e#647#668#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/reserve_place/place_app/fixtures/test_place_app.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2214">
@@ -1360,8 +1379,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/reserve_place/place_app/permissions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="26" column="6" lean-forward="false" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+        <state relative-caret-position="104">
+          <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
             <element signature="e#1679#2618#0" expanded="false" />
           </folding>
@@ -1370,43 +1389,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/reserve_place/place_app/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="197">
+          <caret line="40" column="18" lean-forward="false" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
-            <element signature="e#1221#1527#0" expanded="false" />
-            <element signature="e#1601#1816#0" expanded="false" />
-            <element signature="e#1875#2155#0" expanded="false" />
-            <element signature="e#2231#3787#0" expanded="false" />
+            <element signature="e#1867#2082#0" expanded="false" />
+            <element signature="e#2141#2421#0" expanded="false" />
+            <element signature="e#2497#4053#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reserve_place/reserve_place/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="37" column="44" lean-forward="false" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
-          <folding>
-            <element signature="e#647#668#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reserve_place/place_app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="82" column="6" lean-forward="false" selection-start-line="82" selection-start-column="6" selection-end-line="82" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reserve_place/place_app/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="452" column="38" lean-forward="false" selection-start-line="452" selection-start-column="6" selection-end-line="452" selection-end-column="38" />
+        <state relative-caret-position="418">
+          <caret line="717" column="0" lean-forward="false" selection-start-line="717" selection-start-column="0" selection-end-line="717" selection-end-column="0" />
           <folding>
+            <element signature="e#370#7049#0" expanded="false" />
             <element signature="e#452#730#0" expanded="false" />
-            <element signature="e#7107#13565#0" expanded="false" />
+            <element signature="e#7107#13687#0" expanded="false" />
             <element signature="e#7189#7467#0" expanded="false" />
             <element signature="e#7533#8058#0" expanded="false" />
             <element signature="e#8108#8842#0" expanded="false" />
@@ -1414,71 +1415,94 @@
             <element signature="e#9749#10654#0" expanded="false" />
             <element signature="e#10703#11772#0" expanded="false" />
             <element signature="e#11822#12717#0" expanded="false" />
-            <element signature="e#12771#13565#0" expanded="false" />
-            <element signature="e#13707#13990#0" expanded="false" />
-            <element signature="e#14056#14581#0" expanded="false" />
-            <element signature="e#14631#15365#0" expanded="false" />
-            <element signature="e#15417#16222#0" expanded="false" />
-            <element signature="e#16273#17178#0" expanded="false" />
-            <element signature="e#17227#18320#0" expanded="false" />
-            <element signature="e#18370#19265#0" expanded="false" />
-            <element signature="e#19319#20113#0" expanded="false" />
-            <element signature="e#20161#27001#0" expanded="false" />
-            <element signature="e#20243#20521#0" expanded="false" />
-            <element signature="e#20567#20951#0" expanded="false" />
-            <element signature="e#21010#21398#0" expanded="false" />
-            <element signature="e#21456#22063#0" expanded="false" />
-            <element signature="e#22110#22672#0" expanded="false" />
-            <element signature="e#22720#23161#0" expanded="false" />
-            <element signature="e#23215#23681#0" expanded="false" />
-            <element signature="e#23727#24258#0" expanded="false" />
-            <element signature="e#24916#25455#0" expanded="false" />
-            <element signature="e#25505#25935#0" expanded="false" />
-            <element signature="e#25982#26513#0" expanded="false" />
-            <element signature="e#26564#27001#0" expanded="false" />
-            <element signature="e#27050#32257#0" expanded="false" />
-            <element signature="e#27132#27410#0" expanded="false" />
-            <element signature="e#27456#27842#0" expanded="false" />
-            <element signature="e#27889#28451#0" expanded="false" />
-            <element signature="e#28499#28939#0" expanded="false" />
-            <element signature="e#28985#29516#0" expanded="false" />
-            <element signature="e#29574#30113#0" expanded="false" />
-            <element signature="e#32308#35259#0" expanded="false" />
-            <element signature="e#32390#32673#0" expanded="false" />
-            <element signature="e#32719#33105#0" expanded="false" />
-            <element signature="e#33152#33714#0" expanded="false" />
-            <element signature="e#33762#34202#0" expanded="false" />
-            <element signature="e#34248#34779#0" expanded="false" />
-            <element signature="e#34829#35259#0" expanded="false" />
-            <element signature="e#35309#41421#0" expanded="false" />
-            <element signature="e#35391#35669#0" expanded="false" />
-            <element signature="e#39342#39609#0" expanded="false" />
-            <element signature="e#40779#41421#0" expanded="false" />
-            <element signature="e#41470#43657#0" expanded="false" />
-            <element signature="e#41552#41830#0" expanded="false" />
-            <element signature="e#41871#42107#0" expanded="false" />
-            <element signature="e#42147#42385#0" expanded="false" />
-            <element signature="e#42426#42693#0" expanded="false" />
-            <element signature="e#42736#42984#0" expanded="false" />
-            <element signature="e#43026#43657#0" expanded="false" />
-            <element signature="e#43709#47159#0" expanded="false" />
-            <element signature="e#44115#44351#0" expanded="false" />
-            <element signature="e#44391#44629#0" expanded="false" />
-            <element signature="e#44670#46201#0" expanded="false" />
-            <element signature="e#46244#46493#0" expanded="false" />
-            <element signature="e#46535#47159#0" expanded="false" />
-            <element signature="e#50229#52640#0" expanded="false" />
-            <element signature="e#52696#55129#0" expanded="false" />
+            <element signature="e#13747#20235#0" expanded="false" />
+            <element signature="e#14178#14703#0" expanded="false" />
+            <element signature="e#14753#15487#0" expanded="false" />
+            <element signature="e#15539#16344#0" expanded="false" />
+            <element signature="e#16395#17300#0" expanded="false" />
+            <element signature="e#17349#18442#0" expanded="false" />
+            <element signature="e#18492#19387#0" expanded="false" />
+            <element signature="e#19441#20235#0" expanded="false" />
+            <element signature="e#20365#20643#0" expanded="false" />
+            <element signature="e#21674#22062#0" expanded="false" />
+            <element signature="e#22120#22727#0" expanded="false" />
+            <element signature="e#22774#23336#0" expanded="false" />
+            <element signature="e#23384#23825#0" expanded="false" />
+            <element signature="e#23879#24345#0" expanded="false" />
+            <element signature="e#24391#24922#0" expanded="false" />
+            <element signature="e#24986#25525#0" expanded="false" />
+            <element signature="e#25580#26119#0" expanded="false" />
+            <element signature="e#26169#26599#0" expanded="false" />
+            <element signature="e#26646#27177#0" expanded="false" />
+            <element signature="e#27228#27665#0" expanded="false" />
+            <element signature="e#27714#32921#0" expanded="false" />
+            <element signature="e#27796#28074#0" expanded="false" />
+            <element signature="e#28120#28506#0" expanded="false" />
+            <element signature="e#28553#29115#0" expanded="false" />
+            <element signature="e#29163#29603#0" expanded="false" />
+            <element signature="e#29649#30180#0" expanded="false" />
+            <element signature="e#30238#30777#0" expanded="false" />
+            <element signature="e#32972#35923#0" expanded="false" />
+            <element signature="e#33054#33337#0" expanded="false" />
+            <element signature="e#33383#33769#0" expanded="false" />
+            <element signature="e#33816#34378#0" expanded="false" />
+            <element signature="e#34426#34866#0" expanded="false" />
+            <element signature="e#34912#35443#0" expanded="false" />
+            <element signature="e#35493#35923#0" expanded="false" />
+            <element signature="e#35973#42260#0" expanded="false" />
+            <element signature="e#36055#36333#0" expanded="false" />
+            <element signature="e#36374#36610#0" expanded="false" />
+            <element signature="e#36663#37015#0" expanded="false" />
+            <element signature="e#37064#37451#0" expanded="false" />
+            <element signature="e#37503#37863#0" expanded="false" />
+            <element signature="e#37927#38302#0" expanded="false" />
+            <element signature="e#38354#38763#0" expanded="false" />
+            <element signature="e#38815#39224#0" expanded="false" />
+            <element signature="e#39276#39685#0" expanded="false" />
+            <element signature="e#39725#39963#0" expanded="false" />
+            <element signature="e#40004#40271#0" expanded="false" />
+            <element signature="e#40314#40741#0" expanded="false" />
+            <element signature="e#40795#41576#0" expanded="false" />
+            <element signature="e#41618#42260#0" expanded="false" />
+            <element signature="e#42309#44496#0" expanded="false" />
+            <element signature="e#42391#42669#0" expanded="false" />
+            <element signature="e#42710#42946#0" expanded="false" />
+            <element signature="e#42986#43224#0" expanded="false" />
+            <element signature="e#43265#43532#0" expanded="false" />
+            <element signature="e#43575#43823#0" expanded="false" />
+            <element signature="e#43865#44496#0" expanded="false" />
+            <element signature="e#44548#47998#0" expanded="false" />
+            <element signature="e#44954#45190#0" expanded="false" />
+            <element signature="e#45230#45468#0" expanded="false" />
+            <element signature="e#45509#47040#0" expanded="false" />
+            <element signature="e#47083#47332#0" expanded="false" />
+            <element signature="e#47374#47998#0" expanded="false" />
+            <element signature="e#51068#53479#0" expanded="false" />
+            <element signature="e#53535#55968#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reserve_place/place_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1152">
+          <caret line="69" column="58" lean-forward="false" selection-start-line="69" selection-start-column="58" selection-end-line="69" selection-end-column="58" />
+          <folding>
+            <element signature="e#4298#5401#0" expanded="false" />
+            <element signature="e#5440#5707#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reserve_place/place_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="218">
+          <caret line="15" column="52" lean-forward="false" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
+            <element signature="e#1262#1875#0" expanded="false" />
+            <element signature="e#1933#2507#0" expanded="false" />
+            <element signature="e#2582#3327#0" expanded="false" />
           </folding>
         </state>
       </provider>

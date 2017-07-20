@@ -10,6 +10,13 @@ from rest_framework.relations import HyperlinkedIdentityField
 MAX_FILE_SIZE = 100
 
 
+class GetCommentByLocatorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RenterComment
+        fields = ('facilities_score', 'cleanness_score', 'surroundings_score',
+                  'price_achievement_score', 'locator_score', 'comment')
+
+
 class RenterCommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = RenterComment

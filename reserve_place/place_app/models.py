@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User, Group
 from django.contrib.postgres.fields import JSONField
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.shortcuts import get_object_or_404
 from rest_framework.exceptions import ValidationError
 
 
@@ -45,7 +46,11 @@ class Place(models.Model):
     surroundings = models.TextField(null=True, blank=True)
     distance_from_store = models.BigIntegerField(null=True, blank=True)
     distance_from_restaurant = models.BigIntegerField(null=True, blank=True)
+    is_deleted = models.BooleanField(null=False, blank=False, default=False)
 
+    def delete(self, using=None, keep_parents=False):
+        self.is_deleted = True
+        self.save()
 
 class Rent(models.Model):
     renter = models.ForeignKey(User, null=False, blank=False)
@@ -60,6 +65,10 @@ class Rent(models.Model):
     updated = models.DateField(auto_now=True)
 
     def save(self, *args, **kwargs):
+        place = get_object_or_404(Place, id=self.place.id)
+        if place.is_deleted:
+            raise ValidationError("you cannot rent deleted place.")
+
         rents = Rent.objects.filter(place=self.place, status='r')
         if rents.exists():
             for rent in rents:

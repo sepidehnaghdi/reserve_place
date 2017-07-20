@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Place, Rent, RenterComment, PlaceImage
 from rest_framework import viewsets
 from .serializers import PlaceSerializer, RentSerializer, RenterCommentSerializer, PlaceImageSerializer, \
-    UpdatePlaceByLocatorSerializer
+    UpdatePlaceByLocatorSerializer, GetCommentByLocatorSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .permissions import PlacePermission, RentPermission, RenterCommentPermission, PlaceImagePermission
 from rest_framework_extensions.mixins import NestedViewSetMixin
@@ -13,9 +13,10 @@ from rest_framework.exceptions import PermissionDenied
 
 
 class PlaceViewSet(viewsets.ModelViewSet):
-    queryset = Place.objects.all()
+    queryset = Place.objects.filter(is_deleted=False)
     permission_classes = (IsAuthenticated, PlacePermission)
     filter_class = PlaceFilter
+
 
     def get_serializer_class(self):
         user_groups = self.request.user.groups.values_list('name', flat=True)
@@ -23,7 +24,6 @@ class PlaceViewSet(viewsets.ModelViewSet):
             return UpdatePlaceByLocatorSerializer
         else:
             return PlaceSerializer
-
 
 class RentViewSet(viewsets.ModelViewSet):
     serializer_class = RentSerializer
@@ -48,8 +48,14 @@ class RentViewSet(viewsets.ModelViewSet):
 
 class RenterCommentViewSet(viewsets.ModelViewSet):
     queryset = RenterComment.objects.all()
-    serializer_class = RenterCommentSerializer
     permission_classes = (IsAuthenticated, RenterCommentPermission)
+
+    def get_serializer_class(self):
+        user_groups = self.request.user.groups.values_list('name', flat=True)
+        if self.request.method == 'GET' and 'locator' in user_groups:
+            return GetCommentByLocatorSerializer
+        else:
+            return RenterCommentSerializer
 
     def get_queryset(self):
         queryset = RenterComment.objects.all()

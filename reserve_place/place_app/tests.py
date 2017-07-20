@@ -447,6 +447,9 @@ class RenterCommentByLocatorTestCase(APITestCase):
         url = "/api/v1/places/1/comments/1"
 
         response = client.get(url, format='json')
+        result = json.loads(response.content.decode('utf-8'))
+        self.assertEqual(result.get('renter', None), None)
+
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
 
@@ -696,6 +699,23 @@ class RentByRenterTestCase(APITestCase):
         }
         response = client.post(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
+    def test_rent_place_post_deleted_place(self):
+        client = APIClient()
+        client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+        place = Place.objects.get(id=1)
+        place.is_deleted = True
+        place.save()
+
+        url = "/api/v1/rents"
+        data = {
+            'place': 1,
+            'check_in_date': "2017-02-20",
+            'check_out_date': "2017-02-25"
+
+        }
+        response = client.post(url, data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_rent_place_post_out_of_range(self):
         client = APIClient()
@@ -1188,7 +1208,6 @@ class PlaceByLocatorTestCase(APITestCase):
         self.assertEqual(len(result), 1)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-
     def test_get_places_by_start_rental_period(self):
         client = APIClient()
         client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
@@ -1198,7 +1217,6 @@ class PlaceByLocatorTestCase(APITestCase):
         result = json.loads(response.content.decode('utf-8'))
         self.assertEqual(len(result), 1)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-
 
     def test_get_places_by_period1(self):
         client = APIClient()
@@ -1249,9 +1267,12 @@ class PlaceByLocatorTestCase(APITestCase):
     def test_delete_place(self):
         client = APIClient()
         client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
-
+        place = Place.objects.get(id=1)
+        self.assertEqual(place.is_deleted, False)
         url = "/api/v1/places/1"
         response = client.delete(url, format='json')
+        place = Place.objects.get(id=1)
+        self.assertEqual(place.is_deleted, True)
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
     def test_patch_place_not_allowed(self):
@@ -1275,7 +1296,6 @@ class PlaceByLocatorTestCase(APITestCase):
             place = Place.objects.get(id=1)
             self.assertEqual(place.max_num_of_people, 13)
             self.assertEqual(place.province, 'isf')
-
 
     def test_patch_place(self):
         client = APIClient()
